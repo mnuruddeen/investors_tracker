@@ -11,7 +11,7 @@
               <h2 class="title-section">{{ config('app.name') }}</h2>
               <div class="divider"></div>
 
-              <p>{{ $about->description }}</p>
+              <p>{{ $about->description ?? "" }}</p>
               <a href="{{ url('about-us') }}" class="btn btn-primary mt-3">Read More</a>
             </div>
             <div class="col-lg-6 py-3 wow fadeInRight">

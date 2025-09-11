@@ -25,9 +25,7 @@ class HomeController extends Controller
     public function index()
     {
         $title = "Dashboard";
-        $certificates = Certificate::all();
-        $ownerships = OwnershipType::all();
-        $owners = OwnerType::all();
-        return view('home',compact('title','certificates','ownerships','owners'));
+
+        return view('home',compact('title',));
     }
 }
