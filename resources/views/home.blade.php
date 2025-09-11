@@ -2,7 +2,7 @@
 
 @section('content')
 
-    <div class="container">
+    {{--<div class="container">
       <div class="row mt-4">
         <div class="col-lg-3 col-md-3 col-3 mb-4">
           <div class="card">
@@ -102,7 +102,7 @@
           </div>
 
       </div>
-    </div>
+    </div>--}}
 @endsection
 
 @push('script')
