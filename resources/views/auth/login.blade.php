@@ -1,127 +1,71 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
-    <!-- CSRF Token -->
-    <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'BS-PCAC') }}</title>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
 
     <!-- Favicon -->
     <link rel="shortcut icon" type="image/x-icon" href="{{ asset('assets/img/favicon.png') }}">
 
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"
-      rel="stylesheet"
-    />
-
-    <!-- Icons. Uncomment required icon fonts -->
-    <link rel="stylesheet" href="{{ asset('assets/vendor/fonts/boxicons.css') }}" />
-
-    <!-- Core CSS -->
-    <link rel="stylesheet" href="{{ asset('assets/vendor/css/core.css') }}" class="template-customizer-core-css" />
-    <link rel="stylesheet" href="{{ asset('assets/vendor/css/theme-default.css') }}" class="template-customizer-theme-css" />
-    <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}" />
-
-    <!-- Vendors CSS -->
-    <link rel="stylesheet" href="{{ asset('assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css') }}" />
-
-    <link rel="stylesheet" href="{{ asset('assets/vendor/css/pages/page-auth.css') }}">
-
-    <!-- Helpers -->
-    <script src="{{ asset('assets/vendor/js/helpers.js') }}"></script>
-    <script src="{{ asset('assets/js/config.js') }}"></script> 
-
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/vendors/bootstrap-icons/bootstrap-icons.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/app.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/pages/auth.css') }}">
 </head>
-<body class="account-page">
 
-<div class="container-xxl">
-  <div class="authentication-wrapper authentication-basic container-p-y">
-    <div class="authentication-inner">
-      <!-- Register -->
-      <div class="card">
-        <div class="card-body">
-          <!-- Logo -->
-          <div class="app-brand justify-content-center">
-            <a href="{{ url('/') }}" class="app-brand-link gap-2">
-              <img src="{{ url('assets/img/logo.png') }}" height="70" width="70">
-            </a>
-          </div>
-          <!-- /Logo -->
-          <h4 class="mb-3 text-center">Sign-in to access dashboard</h4>
+<body>
+    <div id="auth">
 
-          <form id="formAuthentication" class="mb-3" action="{{ route('login') }}" method="POST">
-            @csrf
-            <div class="mb-3">
-              <label for="email" class="form-label">Email Address</label>
-              <input
-                type="text"
-                class="form-control"
-                id="text"
-                name="email"
-                placeholder="Enter your email"
-                autofocus
-              />
+        <div class="row h-100">
+            <div class="col-lg-6 col-12">
+                <div id="auth-left">
+                    <div class="auth-logo mb-4">
+                        <a href="{{ url('/') }}"><img src="{{ asset('assets/images/logo/logo.png') }}" alt="Logo"></a>
+                    </div>
+                    {{-- <h1 class="auth-title">Log in.</h1> --}}
+                    <p class="auth-subtitle mb-5">Log in with your credentials.</p>
+                    @include('inc.messages')
+                    <form action="{{ route('login') }}" method="POST">
+                      @csrf
+                        <div class="form-group position-relative has-icon-left mb-4">
+                            <input type="text" name="email" class="form-control form-control-xl" placeholder="Email Address">
+                            <div class="form-control-icon">
+                                <i class="bi bi-person"></i>
+                            </div>
+                        </div>
+                        <div class="form-group position-relative has-icon-left mb-4">
+                            <input type="password" name="password" class="form-control form-control-xl" placeholder="Password">
+                            <div class="form-control-icon">
+                                <i class="bi bi-shield-lock"></i>
+                            </div>
+                        </div>
+                        <div class="form-check form-check-lg d-flex align-items-end">
+                            <input class="form-check-input me-2" type="checkbox" value="" id="flexCheckDefault">
+                            <label class="form-check-label text-gray-600" for="flexCheckDefault">
+                                Keep me logged in
+                            </label>
+                        </div>
+                        <button class="btn btn-primary btn-block btn-lg shadow-lg mt-5">Log in</button>
+                    </form>
+                    <div class="text-center mt-5 text-lg fs-5">
+                        <p class="text-gray-600">Don't have an account? <a href="{{ url('register') }}"
+                                class="font-bold">Sign
+                                up</a>.</p>
+                        <p><a class="font-bold" href="{{ url('forgot-password') }}">Forgot password?</a>.</p>
+                    </div>
+                </div>
             </div>
-            <div class="mb-3 form-password-toggle">
-              <div class="d-flex justify-content-between">
-                <label class="form-label" for="password">Password</label>
-                <a href="{{ url('#') }}">
-                  <small>Forgot Password?</small>
-                </a>
-              </div>
-              <div class="input-group input-group-merge">
-                <input
-                  type="password"
-                  id="password"
-                  class="form-control"
-                  name="password"
-                  placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;"
-                  aria-describedby="password"
-                />
-                <span class="input-group-text cursor-pointer"><i class="bx bx-hide"></i></span>
-              </div>
-            </div>
-            <div class="mb-3">
-              <div class="form-check">
-                <input class="form-check-input" type="checkbox" id="remember-me" />
-                <label class="form-check-label" for="remember-me"> Remember Me </label>
-              </div>
-            </div>
-            <div class="mb-3">
-              <button class="btn btn-primary d-grid w-100" type="submit">Sign in</button>
-            </div>
-          </form>
+            <div class="col-lg-6 d-none d-lg-block">
+                <div id="auth-right">
 
-          {{-- <p class="text-center">
-            <span>New on our platform?</span>
-            <a href="auth-register-basic.html">
-              <span>Create an account</span>
-            </a>
-          </p> --}}
+                </div>
+            </div>
         </div>
-      </div>
-      <!-- /Register -->
+
     </div>
-  </div>
-</div>
-
-<!-- build:js assets/vendor/js/core.js -->
-<script src="{{ asset('assets/vendor/libs/jquery/jquery.js') }}"></script>
-<script src="{{ asset('assets/vendor/libs/popper/popper.js') }}"></script>
-<script src="{{ asset('assets/vendor/js/bootstrap.js') }}"></script>
-<script src="{{ asset('assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js') }}"></script>
-
-<script src="{{ asset('assets/vendor/js/menu.js')}}"></script>
-<!-- endbuild -->
-<!-- Vendors JS -->
-<script src="{{ asset('assets/vendor/libs/apex-charts/apexcharts.js') }}"></script>
-<!-- Main JS -->
-<script src="{{ asset('assets/js/main.js') }}"></script>
-
 </body>
+
 </html>

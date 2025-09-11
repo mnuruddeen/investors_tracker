@@ -9,23 +9,23 @@
 
     <!-- Favicon -->
     <link href="{{ asset('main/img/favicon.ico') }}" rel="icon">
-
-    <!-- Google Web Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Inter:slnt,wght@-10..0,100..900&display=swap" rel="stylesheet">
-
-    <!-- Icon Font Stylesheet -->
-    <link href="{{ asset('main/lib/font-awesome/css/all.min.css') }}" rel="stylesheet">
-    <link href="{{ asset('main/lib/bootstrap-icon/font/bootstrap-icons.css') }}" rel="stylesheet">
-
-    <link rel="stylesheet" href="{{ asset('main/css/maicons.css') }}">
-
-    <link rel="stylesheet" href="{{ asset('main/css/bootstrap.css') }}">
-
-    <link rel="stylesheet" href="{{ asset('main/vendor/animate/animate.css') }}">
-
-    <link rel="stylesheet" href="{{ asset('main/css/theme.css') }}">
+    <!-- bootstrap css -->
+    <link rel="stylesheet" type="text/css" href="{{ asset('main/css/bootstrap.min.css') }}">
+    <!-- style css -->
+    <link rel="stylesheet" type="text/css" href="{{ asset('main/css/style.css') }}">
+    <!-- Responsive-->
+    <link rel="stylesheet" href="{{ asset('main/css/responsive.css') }}">
+    <!-- Scrollbar Custom CSS -->
+    <link rel="stylesheet" href="{{ asset('main/css/jquery.mCustomScrollbar.min.css') }}">
+    <!-- Tweaks for older IEs-->
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+    <!-- fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:400,700|Roboto:400,700&display=swap" rel="stylesheet">
+    <!-- owl stylesheets --> 
+    <link rel="stylesheet" href="{{ asset('main/css/owl.carousel.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('main/css/owl.theme.default.min.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
+    
     @stack('style')
     @stack('script')
 </head>
@@ -34,27 +34,27 @@
   <!-- Back to top button -->
   <div class="back-to-top"></div>
 
-    <header>
+    
       @include('inc.main_navbar')
-    </header>
+    
     
     @yield('content')
 
     @include('inc.main_footer')
 
 
-    <!-- Back to Top -->
-    <a href="#" class="btn btn-primary btn-lg-square rounded-circle back-to-top"><i class="fa fa-arrow-up"></i></a> 
-
-    <!-- JavaScript Libraries -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="{{ asset('main/js/jquery-3.5.1.min.js') }}"></script>
+    <!-- Javascript files-->
+    <script src="{{ asset('main/js/jquery.min.js') }}"></script>
+    <script src="{{ asset('main/js/popper.min.js') }}"></script>
     <script src="{{ asset('main/js/bootstrap.bundle.min.js') }}"></script>
-    <script src="{{ asset('main/js/google-maps.js') }}"></script>
-    <script src="{{ asset('main/vendor/wow/wow.min.js') }}"></script>
-    <script src="{{ asset('main/js/theme.js') }}"></script>
-    <script src="{{ asset('main/lib/counterup/counterup.min.js') }}"></script>   
+    <script src="{{ asset('main/js/jquery-3.0.0.min.js') }}"></script>
+    <script src="{{ asset('main/js/plugin.js') }}"></script>
+    <!-- sidebar -->
+    <script src="{{ asset('main/js/jquery.mCustomScrollbar.concat.min.js') }}"></script>
+    <script src="{{ asset('main/js/custom.js') }}"></script>
+    <!-- javascript --> 
+    <script src="{{ asset('main/js/owl.carousel.js') }}"></script>
+    <script src="https:cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>   
     @stack('script')   
 </body>
 </html>

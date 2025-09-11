@@ -24,7 +24,7 @@
           <div class="card mb-4">
             <div class="card-body">
               <div class="table-responsive">
-                <table id="example" class="table table-striped custom-table mb-0 small">
+                <table id="table1" class="table table-striped custom-table mb-0 small">
                   <thead>
                     <tr>
                         <th width="5%">#</th>

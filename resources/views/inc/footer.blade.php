@@ -1,11 +1,11 @@
-<!-- Footer -->
-<footer class="content-footer footer bg-footer-theme">
-  <div class="container-xxl d-flex flex-wrap justify-content-between py-2">
-    <div class="mb-2 mb-md-0 text-center">
-     <span class="text-muted"> &copy; {{ date("Y") }} - {{ config('app.name') }} - Powered by Noorsoft</span>
+<footer>
+    <div class="footer clearfix mb-0 text-muted">
+        <div class="float-start">
+            <p>&copy; {{ date("Y") }} - {{ config('app.name') }}</p>
+        </div>
+        <div class="float-end">
+            <p>Powered <span class="text-danger"><i class="bi bi-heart"></i></span> by <a
+                    href="http://bict.bauchistate.gov.ng" target="_blank">BICTDE</a></p>
+        </div>
     </div>
-  </div>
 </footer>
-<!-- / Footer -->
-
-<div class="content-backdrop fade"></div>

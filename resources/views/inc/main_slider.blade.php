@@ -1,17 +1,85 @@
-<div class="container">
-  <div class="page-banner home-banner">
-    <div class="row align-items-center flex-wrap-reverse h-100">
-      <div class="col-md-6 py-5 wow fadeInLeft">
-        <h1 class="mb-4">Bauchi State - Certificate of Occupancy Database</h1>
-        <p class="text-lg text-grey mb-5">CofOs digitized and indexed refers to CofOs entered into a digital archive designed in accordance with international good practice.</p>
-        <a href="#" class="btn btn-primary btn-split">About Platform <div class="fab"><span class="mai-play"></span></div></a>
+<div class="header_section">
+  <!--banner section start -->
+   <div class="banner_section layout_padding">
+      <div class="container-fluid">
+         <section class="slide-wrapper">
+            <div class="container-fluid">
+               <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                  <!-- Indicators -->
+                  <ol class="carousel-indicators">
+                     <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                     <li data-target="#myCarousel" data-slide-to="1"></li>
+                     <li data-target="#myCarousel" data-slide-to="2"></li>
+                     <li data-target="#myCarousel" data-slide-to="3"></li>
+                     <li data-target="#myCarousel" data-slide-to="4"></li>
+                  </ol>
+                  <!-- Wrapper for slides -->
+                  <div class="carousel-inner">
+                     <div class="carousel-item active">
+                        <div class="container">
+                           <div class="banner_main">
+                              <h1 class="banner_taital">Business Agency Profit Your Marketing</h1>
+                              <p class="banner_text">It is a long established fact that a reader will be distracted by the readable content of a page when</p>
+                              <div class="btn_main">
+                                 <div class="contact_bt active "><a href="{{ url('contact') }}">Contact Us</a></div>
+                                 <div class="readmore_bt"><a href="#">Read More</a></div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="carousel-item">
+                        <div class="container">
+                           <div class="banner_main">
+                              <h1 class="banner_taital">Business Agency Profit Your Marketing</h1>
+                              <p class="banner_text">It is a long established fact that a reader will be distracted by the readable content of a page when</p>
+                              <div class="btn_main">
+                                 <div class="contact_bt active "><a href="{{ url('contact') }}">Contact Us</a></div>
+                                 <div class="readmore_bt"><a href="#">Read More</a></div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="carousel-item">
+                        <div class="container">
+                           <div class="banner_main">
+                              <h1 class="banner_taital">Business Agency Profit Your Marketing</h1>
+                              <p class="banner_text">It is a long established fact that a reader will be distracted by the readable content of a page when</p>
+                              <div class="btn_main">
+                                 <div class="contact_bt active "><a href="{{ url('contact') }}">Contact Us</a></div>
+                                 <div class="readmore_bt"><a href="#">Read More</a></div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="carousel-item">
+                        <div class="container">
+                           <div class="banner_main">
+                              <h1 class="banner_taital">Business Agency Profit Your Marketing</h1>
+                              <p class="banner_text">It is a long established fact that a reader will be distracted by the readable content of a page when</p>
+                              <div class="btn_main">
+                                 <div class="contact_bt active "><a href="{{ url('contact') }}">Contact Us</a></div>
+                                 <div class="readmore_bt"><a href="#">Read More</a></div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="carousel-item">
+                        <div class="container">
+                           <div class="banner_main">
+                              <h1 class="banner_taital">Business Agency Profit Your Marketing</h1>
+                              <p class="banner_text">It is a long established fact that a reader will be distracted by the readable content of a page when</p>
+                              <div class="btn_main">
+                                 <div class="contact_bt active "><a href="{{ url('contact') }}">Contact Us</a></div>
+                                 <div class="readmore_bt"><a href="#">Read More</a></div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </section>
       </div>
-      <div class="col-md-6 py-5 wow zoomIn">
-        <div class="img-fluid text-center">
-          <img src="{{ asset('main/img/banner_image_1.svg') }}" alt="">
-        </div>
-      </div>
-    </div>
-    <a href="#about" class="btn-scroll" data-role="smoothscroll"><span class="mai-arrow-down"></span></a>
-  </div>
-</div>
+   </div>
+   <!--banner section end -->
+ </div>

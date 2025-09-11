@@ -2,6 +2,14 @@
 @section('content')
 
 <!-- Content -->
+    <!-- Breadcrumb -->
+      <div class="container d-flex justify-content-between flex-md-row">
+        <div>
+          <h5 class="py-3 mb-3 small"><span class="text-muted fw-light"><a href="{{ url('/home') }}">Dashboard</a> / </span> {{ $title }}</h5>
+        </div>
+      </div>
+      <!-- Breadcrumb -->
+
     <div class="container-xxl flex-grow-1 container-p-y">
       
 

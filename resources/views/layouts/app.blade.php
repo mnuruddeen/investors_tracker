@@ -16,93 +16,68 @@
     <!-- Favicon -->
     <link rel="shortcut icon" type="image/x-icon" href="{{ asset('assets/img/favicon.ico') }}">
 
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"
-      rel="stylesheet"
-    />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.css') }}">
 
-    <!-- Icons. Uncomment required icon fonts -->
-    <link rel="stylesheet" href="{{ asset('assets/vendor/fonts/boxicons.css') }}" />
+    <link rel="stylesheet" href="{{ asset('assets/vendors/iconly/bold.css') }}">
 
-    <!-- Core CSS -->
-    <link rel="stylesheet" href="{{ asset('assets/vendor/css/core.css') }}" class="template-customizer-core-css" />
-    <link rel="stylesheet" href="{{ asset('assets/vendor/css/theme-default.css') }}" class="template-customizer-theme-css" />
-    <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}" />
+    <link rel="stylesheet" href="{{ asset('assets/vendors/simple-datatables/style.css') }}">
 
-    <!-- Vendors CSS -->
-    <link rel="stylesheet" href="{{ asset('assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css') }}" />
-    <link rel="stylesheet" href="{{ asset('assets/vendor/libs/apex-charts/apex-charts.css') }}" />
-
-    <!-- Datatable CSS -->
-    <link rel="stylesheet" href="{{ asset('assets/css/dataTables.bootstrap4.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/vendors/perfect-scrollbar/perfect-scrollbar.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/vendors/bootstrap-icons/bootstrap-icons.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/app.css') }}">
 
     <!-- Select2 CSS -->
     <link rel="stylesheet" href="{{ asset('assets/plugins/select2/css/select2.min.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css') }}">
-    <!-- Helpers -->
-    <script src="{{ asset('assets/vendor/js/helpers.js') }}"></script>
-    <script src="{{ asset('assets/js/config.js') }}"></script>
+    
     @stack('style') 
     @stack('script') 
 </head>
 
 <body>
-<!-- Layout wrapper -->
-<div class="layout-wrapper layout-content-navbar">
-    <div class="layout-container">
+    <!-- Layout wrapper -->
+    <div id="app">
+        
+        @include('inc.sidebar')
 
-    @include('inc.sidebar')
-    <!-- Layout container -->
-    <div class="layout-page">
-        @include('inc.header')
-
-        <!-- Content wrapper -->
-        <div class="content-wrapper">
-            
+        <div id="main">
             @yield('content')
-            
-            @include('inc.footer')
-
         </div>
+                
+        @include('inc.footer')
+
     </div>
-
-</div>
-<!-- /Main Wrapper -->
+    <!-- /Main Wrapper -->
 
 
-<!-- build:js assets/vendor/js/core.js -->
-<script src="{{ asset('assets/vendor/libs/jquery/jquery.js') }}"></script>
-<script src="{{ asset('assets/vendor/libs/popper/popper.js') }}"></script>
-<script src="{{ asset('assets/vendor/js/bootstrap.js') }}"></script>
-<script src="{{ asset('assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js') }}"></script>
+    <script src="{{ asset('assets/vendors/perfect-scrollbar/perfect-scrollbar.min.js') }}"></script>
+    <script src="{{ asset('assets/js/bootstrap.bundle.min.js') }}"></script>
 
-<script src="{{ asset('assets/vendor/js/menu.js')}}"></script>
-<!-- endbuild -->
-<!-- Vendors JS -->
-<script src="{{ asset('assets/vendor/libs/apex-charts/apexcharts.js') }}"></script>
-<!-- Main JS -->
-<script src="{{ asset('assets/js/main.js') }}"></script>
+    <script src="{{ asset('assets/vendors/simple-datatables/simple-datatables.js') }}"></script>
+    
 
-<!-- Datatable JS -->
-<script src="{{ asset('assets/js/jquery.dataTables.min.js') }}"></script>
-<script src="{{ asset('assets/js/dataTables.bootstrap4.min.js') }}"></script>
+    <script src="{{ asset('assets/vendors/apexcharts/apexcharts.js') }}"></script>
+    <script src="{{ asset('assets/js/pages/dashboard.js') }}"></script>
 
-<!-- Select2 JS -->
-<script src="{{ asset('assets/plugins/select2/js/select2.full.min.js') }}"></script>
-<!-- Custom JS -->
+    <script src="{{ asset('assets/js/main.js') }}"></script>
 
-<script type="text/javascript">
-    $(function () {
-        //Initialize Select2 Elements
-        $('.select2').select2()
-    });
-</script>
-<script>
-    $('#example').DataTable();
-</script>
-@stack('script')
+    <!-- Select2 JS -->
+    <script src="{{ asset('assets/plugins/select2/js/select2.full.min.js') }}"></script>
+    <!-- Custom JS -->
+
+    <script type="text/javascript">
+        $(function () {
+            //Initialize Select2 Elements
+            $('.select2').select2()
+        });
+    </script>
+    <script>
+        // Simple Datatable
+        let table1 = document.querySelector('#table1');
+        let dataTable = new simpleDatatables.DataTable(table1);
+    </script>
+    @stack('script')
 </body>
 </html>

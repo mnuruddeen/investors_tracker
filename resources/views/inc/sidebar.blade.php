@@ -1,181 +1,163 @@
-<aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme">
-  <div class="app-brand demo">
-    <a href="{{ url('/home') }}" class="app-brand-link">
-      <span class="app-brand-logo demo">
-        <a href="{{ url('/home') }}" class="app-brand-link gap-2">
-            <img src="{{ url('assets/img/logo.png') }}" height="50" width="50">
-        </a>
-      </span>
-      <span class="app-brand-text menu-text fw-bolder ms-2">CofOs</span>
-    </a>
+<div id="sidebar" class="active">
+  <div class="sidebar-wrapper active">
+      <div class="sidebar-header">
+          <div class="d-flex justify-content-between">
+              <div class="logo">
+                  <a href="{{ url('/home') }}"><img src="{{ asset('assets/images/logo/logo.png') }}" alt="Logo" srcset=""></a>
+              </div>
+              <div class="toggler">
+                  <a href="#" class="sidebar-hide d-xl-none d-block"><i class="bi bi-x bi-middle"></i></a>
+              </div>
+          </div>
+      </div>
+      <div class="sidebar-menu">
+          <ul class="menu">
+              <li class="sidebar-title">Menu</li>
 
-    <a href="javascript:void(0);" class="layout-menu-toggle menu-link text-large ms-auto d-block d-xl-none">
-      <i class="bx bx-chevron-left bx-sm align-middle"></i>
-    </a>
+              <li class="sidebar-item active ">
+                  <a href="{{ url('/home') }}" class='sidebar-link'>
+                      <i class="bi bi-grid-fill"></i>
+                      <span>Dashboard</span>
+                  </a>
+              </li>
+
+              <li class="sidebar-item  has-sub">
+                  <a href="#" class='sidebar-link'>
+                      <i class="bi bi-stack"></i>
+                      <span>Website</span>
+                  </a>
+                  <ul class="submenu ">
+                      <li class="submenu-item ">
+                          <a href="{{ url('/abouts') }}">About</a>
+                      </li>
+                      <li class="submenu-item ">
+                          <a href="{{ url('/sliders') }}">Sliders</a>
+                      </li>
+                      <li class="submenu-item ">
+                          <a href="{{ url('/services') }}">Services</a>
+                      </li>
+                      <li class="submenu-item ">
+                          <a href="{{ url('/galleries') }}">Galleries</a>
+                      </li>
+                      <li class="submenu-item ">
+                          <a href="{{ url('/partners') }}">Partners</a>
+                      </li>
+                      <li class="submenu-item ">
+                          <a href="{{ url('/teams') }}">Teams</a>
+                      </li>
+                  </ul>
+              </li>
+
+              <li class="sidebar-item  has-sub">
+                  <a href="#" class='sidebar-link'>
+                      <i class="bi bi-file-earmark-spreadsheet-fill"></i>
+                      <span>Reports</span>
+                  </a>
+                  <ul class="submenu ">
+                      <li class="submenu-item ">
+                          <a href="{{ url('#') }}">Report 1</a>
+                      </li>
+                      <li class="submenu-item ">
+                          <a href="{{ url('#') }}">Report 2</a>
+                      </li>
+                      <li class="submenu-item ">
+                          <a href="{{ url('#') }}">Report 3</a>
+                      </li>
+                  </ul>
+              </li>
+
+              <li class="sidebar-item  has-sub">
+                  <a href="#" class='sidebar-link'>
+                      <i class="bi bi-shield"></i>
+                      <span>Access Controls</span>
+                  </a>
+                  <ul class="submenu ">
+                      <li class="submenu-item ">
+                          <a href="{{ url('roles') }}">Roles</a>
+                      </li>
+                      <li class="submenu-item ">
+                          <a href="{{ url('permissions') }}">Permissions</a>
+                      </li>
+                  </ul>
+              </li>
+
+              <li class="sidebar-item  has-sub">
+                  <a href="#" class='sidebar-link'>
+                      <i class="bi bi-person-badge-fill"></i>
+                      <span>Users</span>
+                  </a>
+                  <ul class="submenu ">
+                      <li class="submenu-item ">
+                          <a href="{{ url('users') }}">Users</a>
+                      </li>
+                  </ul>
+              </li>
+
+              <li class="sidebar-item">
+                  <a href="{{ url('change-password') }}" class='sidebar-link'>
+                      <i class="bi bi-puzzle"></i>
+                      <span>Change Password</span>
+                  </a>
+              </li>
+
+              <li class="sidebar-item">
+                  <a href="{{ route('logout') }}" class='sidebar-link' onclick="event.preventDefault();
+                    document.getElementById('logout-form').submit();">
+                      <i class="bi bi-power"></i>
+                      <span>Logout</span>
+                  </a>
+                  <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                    @csrf
+                  </form>
+              </li>
+              
+
+              <li class="sidebar-item  has-sub">
+                  <a href="#" class='sidebar-link'>
+                      <i class="bi bi-collection-fill"></i>
+                      <span>Extra Components</span>
+                  </a>
+                  <ul class="submenu ">
+                      <li class="submenu-item ">
+                          <a href="{{ url('extra-component-avatar') }}">Avatar</a>
+                      </li>
+                      <li class="submenu-item ">
+                          <a href="{{ url('extra-component-sweetalert') }}">Sweet Alert</a>
+                      </li>
+                      <li class="submenu-item ">
+                          <a href="{{ url('extra-component-toastify') }}">Toastify</a>
+                      </li>
+                      <li class="submenu-item ">
+                          <a href="{{ url('extra-component-rating') }}">Rating</a>
+                      </li>
+                      <li class="submenu-item ">
+                          <a href="{{ url('extra-component-divider') }}">Divider</a>
+                      </li>
+                  </ul>
+              </li>
+
+              <li class="sidebar-item  has-sub">
+                  <a href="#" class='sidebar-link'>
+                      <i class="bi bi-grid-1x2-fill"></i>
+                      <span>Layouts</span>
+                  </a>
+                  <ul class="submenu ">
+                      <li class="submenu-item ">
+                          <a href="{{ url('layout-default') }}">Default Layout</a>
+                      </li>
+                      <li class="submenu-item ">
+                          <a href="{{ url('layout-vertical-1-column') }}">1 Column</a>
+                      </li>
+                      <li class="submenu-item ">
+                          <a href="{{ url('layout-vertical-navbar') }}">Vertical with Navbar</a>
+                      </li>
+                      <li class="submenu-item ">
+                          <a href="{{ url('layout-horizontal') }}">Horizontal Menu</a>
+                      </li>
+                  </ul>
+              </li>
+          </ul>
+      </div>
+      <button class="sidebar-toggler btn x"><i data-feather="x"></i></button>
   </div>
-
-  <div class="menu-inner-shadow"></div>
-
-  <ul class="menu-inner py-1">
-    <!-- Dashboard -->
-    <li class="menu-item active">
-      <a href="{{ url('/home') }}" class="menu-link">
-        <i class="menu-icon tf-icons bx bx-home-circle"></i>
-        <div data-i18n="Analytics">Dashboard</div>
-      </a>
-    </li>
-
-    <li class="menu-item">
-      <a href="javascript:void(0);" class="menu-link menu-toggle">
-        <i class="menu-icon tf-icons bx bx-world"></i>
-        <div data-i18n="Website">Website</div>
-      </a>
-      <ul class="menu-sub">
-        <li class="menu-item">
-          <a href="{{ url('/abouts') }}" class="menu-link">
-            <div data-i18n="Abouts">Abouts</div>
-          </a>
-        </li>
-        <li class="menu-item">
-          <a href="{{ url('/sliders') }}" class="menu-link">
-            <div data-i18n="Sliders">Sliders</div>
-          </a>
-        </li>
-        <li class="menu-item">
-          <a href="{{ url('/services') }}" class="menu-link">
-            <div data-i18n="Services">Services</div>
-          </a>
-        </li>
-        <li class="menu-item">
-          <a href="{{ url('/galleries') }}" class="menu-link">
-            <div data-i18n="Galleries">Galleries</div>
-          </a>
-        </li>
-        <li class="menu-item">
-          <a href="{{ url('/partners') }}" class="menu-link">
-            <div data-i18n="Partners">Partners</div>
-          </a>
-        </li>
-        <li class="menu-item">
-          <a href="{{ url('/teams') }}" class="menu-link">
-            <div data-i18n="Teams">Teams</div>
-          </a>
-        </li>
-      </ul>
-    </li>
-
-    <li class="menu-item">
-      <a href="javascript:void(0)" class="menu-link menu-toggle">
-        <i class="menu-icon tf-icons bx bx-copy"></i>
-        <div data-i18n="Reports">CofOs Config</div>
-      </a>
-      <ul class="menu-sub">
-        <li class="menu-item">
-          <a href="{{ url('owner_types') }}" class="menu-link">
-            <div data-i18n="">Owner Types</div>
-          </a>
-        </li>
-        <li class="menu-item">
-          <a href="{{ url('ownership_types') }}" class="menu-link">
-            <div data-i18n="">Ownership Types</div>
-          </a>
-        </li>
-      </ul>
-    </li>
-
-    <li class="menu-item">
-      <a href="javascript:void(0);" class="menu-link menu-toggle">
-        <i class="menu-icon tf-icons bx bx-news"></i>
-        <div data-i18n="Misc">CofOs</div>
-      </a>
-      <ul class="menu-sub">
-        <li class="menu-item">
-          <a href="{{ url('certificates/create') }}" class="menu-link">
-            <div data-i18n="CofOs Entry">CofOs Entry</div>
-          </a>
-        </li>
-        <li class="menu-item">
-          <a href="{{ url('certificates') }}" class="menu-link">
-            <div data-i18n="Manage CofOs">Manage CofOs</div>
-          </a>
-        </li>
-      </ul>
-    </li>
-
-    <li class="menu-item">
-      <a href="javascript:void(0)" class="menu-link menu-toggle">
-        <i class="menu-icon tf-icons bx bx-file"></i>
-        <div data-i18n="Reports">CofOs Reports</div>
-      </a>
-      <ul class="menu-sub">
-        <li class="menu-item">
-          <a href="{{ url('#') }}" class="menu-link">
-            <div data-i18n="">Report 1</div>
-          </a>
-        </li>
-        <li class="menu-item">
-          <a href="{{ url('#') }}" class="menu-link">
-            <div data-i18n="">Report 2</div>
-          </a>
-        </li>
-        <li class="menu-item">
-          <a href="{{ url('#') }}" class="menu-link">
-            <div data-i18n="">Report 3</div>
-          </a>
-        </li>
-      </ul>
-    </li>
-
-    <li class="menu-item">
-      <a href="javascript:void(0);" class="menu-link menu-toggle">
-        <i class="menu-icon tf-icons bx bx-user"></i>
-        <div data-i18n="Users">System Users</div>
-      </a>
-      <ul class="menu-sub">
-        <li class="menu-item">
-          <a href="{{ url('users') }}" class="menu-link">
-            <div data-i18n="View users">View users</div>
-          </a>
-        </li>
-      </ul>
-    </li>
-
-    <li class="menu-item">
-      <a href="javascript:void(0);" class="menu-link menu-toggle">
-        <i class="menu-icon tf-icons bx bx-key"></i>
-        <div data-i18n="Users">Access Control</div>
-      </a>
-      <ul class="menu-sub">
-        <li class="menu-item">
-          <a href="{{ url('roles') }}" class="menu-link">
-            <div data-i18n="Roles">Roles</div>
-          </a>
-        </li>
-        <li class="menu-item">
-          <a href="{{ url('permissions') }}" class="menu-link">
-            <div data-i18n="Permissions">Permissions</div>
-          </a>
-        </li>
-      </ul>
-    </li>
-
-    <li class="menu-item">
-      <a href="{{ url('/change-password') }}" class="menu-link">
-        <i class="menu-icon tf-icons bx bx-lock"></i>
-        <div data-i18n="Change password">Change password</div>
-      </a>
-    </li>
-
-    <li class="menu-item">
-      <a class="menu-link" href="{{ route('logout') }}"
-           onclick="event.preventDefault();
-            document.getElementById('logout-form').submit();">
-        <i class="menu-icon tf-icons bx bx-power-off"></i>
-        <div data-i18n="Logout">Logout</div>
-      </a>
-      <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-        @csrf
-        </form>
-    </li>
-  </ul>
-</aside>
+</div>
