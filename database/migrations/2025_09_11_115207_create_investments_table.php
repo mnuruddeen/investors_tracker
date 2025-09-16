@@ -18,6 +18,8 @@ class CreateInvestmentsTable extends Migration
             $table->string('user_id');
             $table->string('sector_id');
             $table->string('investment_name');
+            $table->text('description')->nullable();
+            $table->string('reg_no')->nullable();
             $table->string('country')->nullable();
             $table->string('investment_value')->default(0);
             $table->string('location')->nullable();

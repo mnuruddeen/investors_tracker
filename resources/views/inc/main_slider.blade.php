@@ -18,10 +18,10 @@
                      <div class="carousel-item active">
                         <div class="container">
                            <div class="banner_main">
-                              <h1 class="banner_taital">Business Agency Profit Your Marketing</h1>
-                              <p class="banner_text">It is a long established fact that a reader will be distracted by the readable content of a page when</p>
+                              <h1 class="banner_taital">Investor Tracking System</h1>
+                              <p class="banner_text">Track. Analyze. Grow</p>
                               <div class="btn_main">
-                                 <div class="contact_bt active "><a href="{{ url('contact') }}">Contact Us</a></div>
+                                 <div class="contact_bt active "><a href="{{ url('contact-us') }}">Contact Us</a></div>
                                  <div class="readmore_bt"><a href="#">Read More</a></div>
                               </div>
                            </div>
@@ -30,10 +30,10 @@
                      <div class="carousel-item">
                         <div class="container">
                            <div class="banner_main">
-                              <h1 class="banner_taital">Business Agency Profit Your Marketing</h1>
-                              <p class="banner_text">It is a long established fact that a reader will be distracted by the readable content of a page when</p>
+                              <h1 class="banner_taital">Your Investments</h1>
+                              <p class="banner_text">Simplified and Transparent</p>
                               <div class="btn_main">
-                                 <div class="contact_bt active "><a href="{{ url('contact') }}">Contact Us</a></div>
+                                 <div class="contact_bt active "><a href="{{ url('contact-us') }}">Contact Us</a></div>
                                  <div class="readmore_bt"><a href="#">Read More</a></div>
                               </div>
                            </div>
@@ -42,10 +42,10 @@
                      <div class="carousel-item">
                         <div class="container">
                            <div class="banner_main">
-                              <h1 class="banner_taital">Business Agency Profit Your Marketing</h1>
-                              <p class="banner_text">It is a long established fact that a reader will be distracted by the readable content of a page when</p>
+                              <h1 class="banner_taital">Building Trust</h1>
+                              <p class="banner_text">Through Transparent Investment Tracking</p>
                               <div class="btn_main">
-                                 <div class="contact_bt active "><a href="{{ url('contact') }}">Contact Us</a></div>
+                                 <div class="contact_bt active "><a href="{{ url('contact-us') }}">Contact Us</a></div>
                                  <div class="readmore_bt"><a href="#">Read More</a></div>
                               </div>
                            </div>
@@ -54,10 +54,10 @@
                      <div class="carousel-item">
                         <div class="container">
                            <div class="banner_main">
-                              <h1 class="banner_taital">Business Agency Profit Your Marketing</h1>
-                              <p class="banner_text">It is a long established fact that a reader will be distracted by the readable content of a page when</p>
+                              <h1 class="banner_taital">Smart Investment</h1>
+                              <p class="banner_text">Clear Tracking. Better Returns</p>
                               <div class="btn_main">
-                                 <div class="contact_bt active "><a href="{{ url('contact') }}">Contact Us</a></div>
+                                 <div class="contact_bt active "><a href="{{ url('contact-us') }}">Contact Us</a></div>
                                  <div class="readmore_bt"><a href="#">Read More</a></div>
                               </div>
                            </div>
@@ -66,10 +66,10 @@
                      <div class="carousel-item">
                         <div class="container">
                            <div class="banner_main">
-                              <h1 class="banner_taital">Business Agency Profit Your Marketing</h1>
-                              <p class="banner_text">It is a long established fact that a reader will be distracted by the readable content of a page when</p>
+                              <h1 class="banner_taital">Stay Ahead</h1>
+                              <p class="banner_text">with Real-Time Investment Insights</p>
                               <div class="btn_main">
-                                 <div class="contact_bt active "><a href="{{ url('contact') }}">Contact Us</a></div>
+                                 <div class="contact_bt active "><a href="{{ url('contact-us') }}">Contact Us</a></div>
                                  <div class="readmore_bt"><a href="#">Read More</a></div>
                               </div>
                            </div>

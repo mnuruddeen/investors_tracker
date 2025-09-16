@@ -3,10 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
+use App\Models\Product;
 use App\Models\Sector;
 use Illuminate\Http\Request;
 
-class SectorController extends Controller
+class ProductController extends Controller
 {
     public function __construct()
     {
@@ -15,9 +16,10 @@ class SectorController extends Controller
 
     public function index()
     {
-        $title = "Sectors";
-        $sectors = Sector::orderBy('id','desc')->get();;
-        return view('sector.index', compact('title','sectors'));
+        $title = "Products and Services";
+        $products = Product::orderBy('id','desc')->get();
+        $sectors = Sector::orderBy('sector_name','ASC')->get();
+        return view('product.index', compact('title','products','sectors'));
     }
 
     /**
@@ -39,15 +41,17 @@ class SectorController extends Controller
     public function store(Request $request)
     {
         $data = $request->validate([
+            'sector' =>'required',
             'name' =>'required',
         ]);
 
-        $sector = Sector::create([
-            'sector_name' => $data['name'],
+        $sector = Product::create([
+            'sector_id' => $data['sector'],
+            'product_name' => $data['name'],
         ]);
 
         if($sector){
-            return redirect('sectors')->with('success','Sector Added Successfully');
+            return redirect('products')->with('success','Product And Services Added Successfully');
         }else{
             return redirect()->back()->with('error','Sorry Something went wrong');
         }
@@ -82,18 +86,20 @@ class SectorController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Sector $sector)
+    public function update(Request $request, Product $product)
     {
         $data = $request->validate([
+            'sector' =>'required',
             'name' =>'required',
         ]);
 
-        $update = $sector->update([
-            'sector_name' => $data['name'],
+        $update = $product->update([
+            'sector_id' => $data['sector'],
+            'product_name' => $data['name'],
         ]);
 
         if($update){
-            return redirect('sectors')->with('success','Sector Updated Successfully');
+            return redirect('products')->with('success','Product and Services Updated Successfully');
         }else{
             return redirect()->back()->with('error','Sorry Something went wrong');
         }
@@ -107,8 +113,8 @@ class SectorController extends Controller
      */
     public function destroy($id)
     {
-        $sector = Sector::findOrFail(decrypt($id));
+        $sector = Product::findOrFail(decrypt($id));
         $sector->delete();
-        return redirect()->back()->with('success','Sector Deleted Successfully');
+        return redirect()->back()->with('success','Product and Service Deleted Successfully');
     }
 }

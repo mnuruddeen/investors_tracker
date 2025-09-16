@@ -18,10 +18,10 @@ class UserController extends Controller
     public function __construct()
     {
         $this->middleware('auth');
-        $this->middleware('permission:view user',['only'=>['index']]);
+        /*$this->middleware('permission:view user',['only'=>['index']]);
         $this->middleware('permission:create user',['only'=>['create','store']]);
         $this->middleware('permission:update user',['only'=>['edit','update']]);
-        $this->middleware('permission:delete user',['only'=>['destroy']]);
+        $this->middleware('permission:delete user',['only'=>['destroy']]);*/
     }
 
     /**
@@ -210,7 +210,7 @@ class UserController extends Controller
         $title = "View students";
         $schools = School::all();
         return view('user.student',compact('title','schools'));
-    }  
+    }
 
     public function students(Request $request){
 
@@ -226,5 +226,5 @@ class UserController extends Controller
         $students = Student::where('program_id','=',$data['program'])->where('current_level','=',$data['level'])->orderBy('fullname','ASC')->get();
 
         return view('user.students',compact('title','students'));
-    }  
+    }
 }

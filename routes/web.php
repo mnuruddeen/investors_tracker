@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\InvestmentController;
 use App\Http\Controllers\PagesController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\NewsController;
@@ -42,6 +43,8 @@ Route::get('/contact-us', [PagesController::class,'contact']);
 //API CALLS
 Route::get('get_rank/{id}',[RankController::class,'get_ranks']);
 Route::get('get_local/{id}',[LocalController::class,'get_locals']);
+Route::post('/get_lga', [StateController::class,'get_lga']);
+Route::post('/get_product', [InvestmentController::class,'get_product']);
 
 Route::get('login', function () {
     return view('auth.login');
@@ -105,21 +108,21 @@ Route::put('roles/{id}/add_permission_to_role', [App\Http\Controllers\RoleContro
 Route::resource('documents', App\Http\Controllers\AttachmentController::class);
 Route::get('documents/{id}/delete', [App\Http\Controllers\AttachmentController::class,'destroy']);
 
-//OwnerType
-Route::resource('owner_types', App\Http\Controllers\OwnerTypeController::class);
-Route::get('owner_types/{id}/delete', [App\Http\Controllers\OwnerTypeController::class,'destroy']);
-
-//OwnershipType
-Route::resource('ownership_types', App\Http\Controllers\OwnershipTypeController::class);
-Route::get('ownership_types/{id}/delete', [App\Http\Controllers\OwnershipTypeController::class,'destroy']);
-
-//Certificates
-Route::resource('certificates', App\Http\Controllers\CertificateController::class);
-Route::get('certificates/{id}/delete', [App\Http\Controllers\CertificateController::class,'destroy']);
-
 //Users
 Route::resource('users', App\Http\Controllers\UserController::class);
 Route::get('users/{id}/delete', [App\Http\Controllers\UserController::class,'destroy']);
+
+//Sectors
+Route::resource('sectors', App\Http\Controllers\SectorController::class);
+Route::get('sectors/{id}/delete', [App\Http\Controllers\SectorController::class,'destroy']);
+
+//Products and services
+Route::resource('products', App\Http\Controllers\ProductController::class);
+Route::get('products/{id}/delete', [App\Http\Controllers\ProductController::class,'destroy']);
+
+//Sectors
+Route::resource('investments', App\Http\Controllers\InvestmentController::class);
+Route::get('investments/{id}/delete', [App\Http\Controllers\InvestmentController::class,'destroy']);
 
 //CHANGE PASSWORD
 Route::get('change-password',[UserController::class,'change_password']);
@@ -129,7 +132,8 @@ Route::post('change-password',[UserController::class,'change_password_save']);
 Route::get('search',[SearchController::class,'search_results']);
 
 //REPORTS
-Route::get('reports/employees',[ReportController::class,'employees']);
+Route::get('investors',[ReportController::class,'investment']);
+Route::get('reports/investment',[ReportController::class,'investment']);
 Route::get('reports/contact_details',[ReportController::class,'contact_details']);
 Route::get('reports/bank_details',[ReportController::class,'bank_details']);
 

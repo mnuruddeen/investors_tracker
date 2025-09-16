@@ -44,6 +44,7 @@ class User extends Authenticatable
         'psn',
         'is_admin',
         'password',
+        'user_id',
     ];
 
     /**

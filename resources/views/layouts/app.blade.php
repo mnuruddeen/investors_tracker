@@ -31,32 +31,32 @@
     <!-- Select2 CSS -->
     <link rel="stylesheet" href="{{ asset('assets/plugins/select2/css/select2.min.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css') }}">
-    
-    @stack('style') 
-    @stack('script') 
+
+    @stack('style')
+    @stack('script')
 </head>
 
 <body>
     <!-- Layout wrapper -->
     <div id="app">
-        
+
         @include('inc.sidebar')
 
         <div id="main">
             @yield('content')
         </div>
-                
+
         @include('inc.footer')
 
     </div>
     <!-- /Main Wrapper -->
 
-
+    <script src="{{ asset('assets/plugins/js/jquery-3.5.1.js') }}"></script>
     <script src="{{ asset('assets/vendors/perfect-scrollbar/perfect-scrollbar.min.js') }}"></script>
     <script src="{{ asset('assets/js/bootstrap.bundle.min.js') }}"></script>
 
     <script src="{{ asset('assets/vendors/simple-datatables/simple-datatables.js') }}"></script>
-    
+
 
     <script src="{{ asset('assets/vendors/apexcharts/apexcharts.js') }}"></script>
     <script src="{{ asset('assets/js/pages/dashboard.js') }}"></script>

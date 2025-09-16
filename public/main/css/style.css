@@ -243,17 +243,17 @@ button {
     color: #acabab;
     text-transform: uppercase;
 }
-.navbar-light .navbar-nav .nav-link:focus, 
+.navbar-light .navbar-nav .nav-link:focus,
 .navbar-light .navbar-nav .nav-link:hover {
     color: #070707;
 }
-.navbar-light .navbar-nav .active>.nav-link, 
-.navbar-light .navbar-nav .nav-link.active, 
-.navbar-light .navbar-nav .nav-link.show, 
+.navbar-light .navbar-nav .active>.nav-link,
+.navbar-light .navbar-nav .nav-link.active,
+.navbar-light .navbar-nav .nav-link.show,
 .navbar-light .navbar-nav .show>.nav-link {
     color: #070707;
 }
-.logo{ 
+.logo{
     width: 25%;
     float: left;
 }
@@ -886,7 +886,7 @@ textarea#comment::placeholder {
     font-size: 20px;
     color: #ffffff;
     font-weight: bold;
-    font-family: 'Roboto', sans-serif;    
+    font-family: 'Roboto', sans-serif;
 }
 .footer_text{
     width: 80%;
@@ -895,7 +895,7 @@ textarea#comment::placeholder {
     color: #8e8e8e;
     margin: 0px;
     padding-top: 20px;
-    font-family: 'Roboto', sans-serif;    
+    font-family: 'Roboto', sans-serif;
 }
 
 .Enter_text {

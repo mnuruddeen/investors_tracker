@@ -15,12 +15,16 @@ var optionsProfileVisit = {
 	plotOptions: {
 	},
 	series: [{
-		name: 'sales',
-		data: [9,20,30,20,10,20,30,20,10,20,30,20]
+		name: 'Investment Value',
+		data: JSON.parse(
+            document.getElementById("investment_value").getAttribute("data")
+        )
 	}],
 	colors: '#435ebe',
 	xaxis: {
-		categories: ["Jan","Feb","Mar","Apr","May","Jun","Jul", "Aug","Sep","Oct","Nov","Dec"],
+		categories: JSON.parse(
+            document.getElementById("lga_label").getAttribute("data")
+        ),
 	},
 }
 let optionsVisitorsProfile  = {

@@ -22,7 +22,7 @@
         <div class="row h-100">
             <div class="col-lg-6 col-12">
                 <div id="auth-left">
-                    <div class="auth-logo mb-4">
+                    <div class="auth-logo mb-2" style="width: 100px !important;">
                         <a href="{{ url('/') }}"><img src="{{ asset('assets/images/logo/logo.png') }}" alt="Logo"></a>
                     </div>
                     {{-- <h1 class="auth-title">Log in.</h1> --}}
@@ -59,8 +59,8 @@
                 </div>
             </div>
             <div class="col-lg-6 d-none d-lg-block">
-                <div id="auth-right">
-
+                <div id="auth-right" style="display: flex;  justify-content: center;   align-items: center;   height: 100%;  padding: 20px;">
+                    <img class="img img-fluid"  style="width: 100%; height: 100%; object-fit: contain; " src="{{ asset('assets/images/side_img.png') }}" alt="Logo" srcset="">
                 </div>
             </div>
         </div>

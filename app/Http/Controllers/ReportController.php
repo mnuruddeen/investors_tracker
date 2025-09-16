@@ -3,21 +3,22 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
+use App\Models\Investment;
 use Illuminate\Http\Request;
 use App\Models\Employee;
 
 class ReportController extends Controller
 {
-    public function __construct()
+    /*public function __construct()
     {
         $this->middleware('auth');
-    }
-    
-    public function employees()
+    }*/
+
+    public function investment()
     {
-        $title = "List of Employees";
-        $employees = Employee::all()->sortBy('first_name');
-        return view('report.employee',compact('title','employees'));
+        $title = "List Of Investments Registered With The State";
+        $investments = Investment::all()->sortBy('investment_name');
+        return view('report.investment',compact('title','investments'));
     }
 
     public function bank_details()

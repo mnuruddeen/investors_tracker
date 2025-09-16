@@ -9,14 +9,11 @@
 
       <div class="footer_section_2">
          <div class="row">
-            <div class="col-lg-4">
+            <div class="col-lg-8">
                <h2 class="footer_taital">About</h2>
-               <p class="footer_text">There are many variations of passages of Lorem Ipsum available, but the majority havThere are many variations of passages of Lorem Ipsum available, but the majority hav</p>
+               <p class="footer_text">The Bauchi State Investment Tracking System (BSITS) is a digital platform designed to monitor, manage, and evaluate investments across the state. It provides a centralized database for capturing investment activities, linking them to specific Local Government Areas (LGAs) and sectors.</p>
             </div>
-            <div class="col-lg-4">
-               <h2 class="footer_taital">Services Link</h2>
-               <p class="footer_text">There are many variations of passages of Lorem Ipsum available, but the majority havThere are many variations of passages of Lorem Ipsum available, but the majority hav</p>
-            </div>
+
             <div class="col-lg-4">
                <h2 class="footer_taital">Subscribe</h2>
                <input type="text" class="Enter_text" placeholder="Enter Your Email" name="Enter Your Email">

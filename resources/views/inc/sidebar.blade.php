@@ -3,7 +3,7 @@
       <div class="sidebar-header">
           <div class="d-flex justify-content-between">
               <div class="logo">
-                  <a href="{{ url('/home') }}"><img src="{{ asset('assets/images/logo/logo.png') }}" alt="Logo" srcset=""></a>
+                  <a href="{{ url('/home') }}"> BASITS</a>
               </div>
               <div class="toggler">
                   <a href="#" class="sidebar-hide d-xl-none d-block"><i class="bi bi-x bi-middle"></i></a>
@@ -20,7 +20,7 @@
                       <span>Dashboard</span>
                   </a>
               </li>
-
+              @if(auth()->user()->is_admin)
               <li class="sidebar-item  has-sub">
                   <a href="#" class='sidebar-link'>
                       <i class="bi bi-stack"></i>
@@ -47,7 +47,20 @@
                       </li>
                   </ul>
               </li>
-
+              <li class="sidebar-item  has-sub">
+                  <a href="#" class='sidebar-link'>
+                      <i class="bi bi-collection-fill"></i>
+                      <span>Setup</span>
+                  </a>
+                  <ul class="submenu ">
+                      <li class="submenu-item ">
+                          <a href="{{ url('sectors') }}">Manage Sector</a>
+                      </li>
+                      <li class="submenu-item ">
+                          <a href="{{ url('products') }}">Manage Product & Service</a>
+                      </li>
+                  </ul>
+              </li>
               <li class="sidebar-item  has-sub">
                   <a href="#" class='sidebar-link'>
                       <i class="bi bi-file-earmark-spreadsheet-fill"></i>
@@ -55,13 +68,7 @@
                   </a>
                   <ul class="submenu ">
                       <li class="submenu-item ">
-                          <a href="{{ url('#') }}">Report 1</a>
-                      </li>
-                      <li class="submenu-item ">
-                          <a href="{{ url('#') }}">Report 2</a>
-                      </li>
-                      <li class="submenu-item ">
-                          <a href="{{ url('#') }}">Report 3</a>
+                          <a href="{{ url('reports/investment') }}">Investors List</a>
                       </li>
                   </ul>
               </li>
@@ -92,7 +99,18 @@
                       </li>
                   </ul>
               </li>
-
+              @endif
+              <li class="sidebar-item  has-sub">
+                  <a href="#" class='sidebar-link'>
+                      <i class="bi bi-grid-1x2-fill"></i>
+                      <span>Investment</span>
+                  </a>
+                  <ul class="submenu ">
+                      <li class="submenu-item ">
+                          <a href="{{ url('investments') }}">Investments</a>
+                      </li>
+                  </ul>
+              </li>
               <li class="sidebar-item">
                   <a href="{{ url('change-password') }}" class='sidebar-link'>
                       <i class="bi bi-puzzle"></i>
@@ -109,52 +127,6 @@
                   <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                     @csrf
                   </form>
-              </li>
-              
-
-              <li class="sidebar-item  has-sub">
-                  <a href="#" class='sidebar-link'>
-                      <i class="bi bi-collection-fill"></i>
-                      <span>Extra Components</span>
-                  </a>
-                  <ul class="submenu ">
-                      <li class="submenu-item ">
-                          <a href="{{ url('extra-component-avatar') }}">Avatar</a>
-                      </li>
-                      <li class="submenu-item ">
-                          <a href="{{ url('extra-component-sweetalert') }}">Sweet Alert</a>
-                      </li>
-                      <li class="submenu-item ">
-                          <a href="{{ url('extra-component-toastify') }}">Toastify</a>
-                      </li>
-                      <li class="submenu-item ">
-                          <a href="{{ url('extra-component-rating') }}">Rating</a>
-                      </li>
-                      <li class="submenu-item ">
-                          <a href="{{ url('extra-component-divider') }}">Divider</a>
-                      </li>
-                  </ul>
-              </li>
-
-              <li class="sidebar-item  has-sub">
-                  <a href="#" class='sidebar-link'>
-                      <i class="bi bi-grid-1x2-fill"></i>
-                      <span>Layouts</span>
-                  </a>
-                  <ul class="submenu ">
-                      <li class="submenu-item ">
-                          <a href="{{ url('layout-default') }}">Default Layout</a>
-                      </li>
-                      <li class="submenu-item ">
-                          <a href="{{ url('layout-vertical-1-column') }}">1 Column</a>
-                      </li>
-                      <li class="submenu-item ">
-                          <a href="{{ url('layout-vertical-navbar') }}">Vertical with Navbar</a>
-                      </li>
-                      <li class="submenu-item ">
-                          <a href="{{ url('layout-horizontal') }}">Horizontal Menu</a>
-                      </li>
-                  </ul>
               </li>
           </ul>
       </div>

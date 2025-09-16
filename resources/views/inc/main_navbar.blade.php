@@ -12,14 +12,17 @@
              <a class="nav-link" href="{{ url('about-us') }}">About</a>
           </li>
           <li class="nav-item">
-             <a class="nav-link" href="{{ url('#') }}">Documents</a>
+             <a class="nav-link" href="{{ url('investors') }}">Investors</a>
           </li>
           <li class="nav-item">
              <a class="nav-link" href="{{ url('contact-us') }}">Contact Us</a>
           </li>
           <li class="nav-item pull-right">
-             <a class="nav-link" href="{{ url('login') }}">Login</a>
+             <a class="nav-link" href="{{ url('register') }}">Register</a>
           </li>
+           <li class="nav-item pull-right">
+               <a class="nav-link" href="{{ url('login') }}">Login</a>
+           </li>
        </ul>
        <form class="form-inline my-2 my-lg-0">
           <div class="search_icon"><img src="{{ asset('main/images/search-icon.png') }}"></div>

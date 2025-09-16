@@ -1,6 +1,7 @@
 <?php
 
 use App\Models\Employee;
+use App\Models\Local;
 use App\Models\Rank;
 use Carbon\Carbon;
 
@@ -60,4 +61,8 @@ function calculateEDOR($employee)
             }
         }
     }
+}
+
+function get_states($local_id){
+    return Local::select('state_id')->whereIn('id',$local_id)->get()->toArray();
 }

@@ -1,95 +1,76 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
-    <!-- CSRF Token -->
-    <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
 
     <!-- Favicon -->
     <link rel="shortcut icon" type="image/x-icon" href="{{ asset('assets/img/favicon.png') }}">
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.min.css') }}">
-
-    <!-- Fontawesome CSS -->
-    <link rel="stylesheet" href="{{ asset('assets/css/font-awesome.min.css') }}">
-
-    <!-- Main CSS -->
-    <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/vendors/bootstrap-icons/bootstrap-icons.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/app.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/pages/auth.css') }}">
 </head>
-<body class="account-page">
 
-<!-- Main Wrapper -->
-<div class="main-wrapper">
-    <div class="account-content">
-        <div class="container">
+<body>
+<div id="auth">
 
-            <!-- Account Logo -->
-            <div class="account-logo">
-                <a href="{{ url('/') }}"><img src="{{ asset('assets/img/bauchi_logo.png') }}" alt="Nominalroll"></a>
-            </div>
-            <!-- /Account Logo -->
-
-            <div class="account-box">
-                <div class="account-wrapper">
-
-                    <h3 class="account-title">Create an account</h3>
-                    @include('inc.messages')
-                <!-- Account Form -->
-                    <form action="{{ route('register') }}" method="post">
-                        @csrf
-                        <div class="form-group">
-                            <label>Name</label>
-                            <input class="form-control" type="text" name="name" value="{{ old('name') }}">
+    <div class="row h-100">
+        <div class="col-lg-6 col-12">
+            <div id="auth-left">
+                <div class="auth-logo mb-2" style="width: 100px !important;">
+                    <a href="{{ url('/') }}"><img src="{{ asset('assets/images/logo/logo.png') }}" alt="Logo"></a>
+                </div>
+                {{-- <h1 class="auth-title">Log in.</h1> --}}
+                <p class="auth-subtitle mb-5">Signup.</p>
+                @include('inc.messages')
+                <form action="{{ route('register') }}" method="POST">
+                    @csrf
+                    <div class="form-group position-relative has-icon-left mb-4">
+                        <input type="text" name="name" class="form-control form-control-xl" placeholder="Name">
+                        <div class="form-control-icon">
+                            <i class="bi bi-person"></i>
                         </div>
-                        <div class="form-group">
-                            <label>Email Address</label>
-                            <input class="form-control" type="email" name="email" value="{{ old('email') }}">
+                    </div>
+                    <div class="form-group position-relative has-icon-left mb-4">
+                        <input type="text" name="email" class="form-control form-control-xl" placeholder="Email Address">
+                        <div class="form-control-icon">
+                            <i class="bi bi-person"></i>
                         </div>
-                        <div class="form-group">
-                            <div class="row">
-                                <div class="col">
-                                    <label>Password</label>
-                                </div>
-                            </div>
-                            <input class="form-control" type="password" name="password" value="">
+                    </div>
+                    <div class="form-group position-relative has-icon-left mb-4">
+                        <input type="password" name="password" class="form-control form-control-xl" placeholder="Password">
+                        <div class="form-control-icon">
+                            <i class="bi bi-shield-lock"></i>
                         </div>
-                        <div class="form-group">
-                            <div class="row">
-                                <div class="col">
-                                    <label>Confirm Password</label>
-                                </div>
-                            </div>
-                            <input class="form-control" type="password" name="password_confirmation" value="">
+                    </div>
+                    <div class="form-group position-relative has-icon-left mb-4">
+                        <input type="password" name="password_confirmation" class="form-control form-control-xl" placeholder="Confirm Password">
+                        <div class="form-control-icon">
+                            <i class="bi bi-shield-lock"></i>
                         </div>
-                        <div class="form-group text-center">
-                            <button class="btn btn-primary account-btn" type="submit">Register</button>
-                        </div>
-                        <div class="account-footer">
-                            <p>Already have an account? <a href="{{ url('/login') }}">Login</a></p>
-                        </div>
-                    </form>
-                    <!-- /Account Form -->
-
+                    </div>
+                    <button class="btn btn-primary btn-block btn-lg shadow-lg mt-5">Signup</button>
+                </form>
+                <div class="text-center mt-5 text-lg fs-5">
+                    <p class="text-gray-600">Already have an account? <a href="{{ url('login') }}"
+                                                                       class="font-bold">Login</a>.</p>
                 </div>
             </div>
         </div>
+        <div class="col-lg-6 d-none d-lg-block">
+            <div id="auth-right" style="display: flex;  justify-content: center;   align-items: center;   height: 100%;  padding: 20px;">
+                <img class="img img-fluid"  style="width: 100%; height: 100%; object-fit: contain; " src="{{ asset('assets/images/side_img.png') }}" alt="Logo" srcset="">
+            </div>
+        </div>
     </div>
+
 </div>
-<!-- /Main Wrapper -->
-
-<!-- jQuery -->
-<script src="{{ asset('assets/js/jquery-3.5.1.min.js') }}"></script>
-
-<!-- Bootstrap Core JS -->
-<script src="{{ asset('assets/js/popper.min.js') }}"></script>
-<script src="{{ asset('assets/js/bootstrap.min.js') }}"></script>
-
-<!-- Custom JS -->
-<script src="{{ asset('assets/js/app.js') }}"></script>
-
 </body>
+
 </html>
+
